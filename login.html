@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            background-image: url('public/background.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #f1f1f1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: white;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 8px;
+            border-bottom: 2px solid white;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .signup {
+            margin-top: 15px;
+            font-size: 1rem;
+            color: white;
+        }
+
+        .signup a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signup a:hover {
+            color: #0056b3;
+        }
+
+        #error-message {
+            margin-top: 15px;
+            color: red;
+            display: none;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form action="/login" method="post">
+        <h1>Login Form</h1>
+        <label for="name">Name:</label>
+        <input placeholder="Name" name="name" id="name" type="text" required>
+        <label for="password">Password:</label>
+        <input placeholder="Password" name="password" id="password" type="password" required>
+        <button type="submit">Login</button>
+        <p class="signup">Don't have an account? <a href="/signup">Create a new account</a></p>
+        <p id="error-message">Invalid username or password</p>
+    </form>
+
+    <script>
+        const loginForm = document.querySelector('form');
+        const errorMessage = document.getElementById('error-message');
+
+        // Error handling is now done on the server-side (backend)
+        // The backend will handle invalid username/password responses
+    </script>
+</body>
+</html>

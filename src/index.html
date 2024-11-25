@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EchoEvents</title>
+
+  <link rel="icon" href="public/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" style="background: #0c172f;">
+    <div class="logo">EchoEvents</div>
+    <ul class="navbar-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#review">Review</a></li>
+            <li><a href="#contact">Contact</a></li>
+            
+          </ul>
+    <button class="sign-in">Sign In</button>
+    
+  </header>
+
+  <!-- Content Section -->
+  <div class="content">
+    <h1>Echo Events</h1>
+    <p>Stay in the Loop – Discover, Engage, and Experience Campus Events!</p>
+    <p class="cta">Enter your email to get notified on the upcoming events</p>
+    <form class="email-form">
+      <input type="email" placeholder="Email address" required>
+      <button type="submit">Get Started</button>
+    </form>
+  </div>
+
+  <!-- Featured Events Section -->
+  <section class="featured-events">
+    <h2>Featured Events</h2>
+    <div class="events-grid">
+      <!-- Event Card 1 -->
+      <!-- <div class="event-card">
+        <div class="event-tag">COURSES</div>
+        <img src="event1.jpg" alt="Event 1">
+        <div class="event-info">
+          <h3>1% Club's Retire Early Masterclass</h3>
+          <p><span>Every Sunday</span> | <span>4PM - 6PM</span></p>
+          <p>Online</p>
+          
+          <button>BUY NOW</button>
+        </div>
+      </div> -->
+      
+      <div class="events-grid" id="events-grid">
+        <!-- Dynamically populated event cards -->
+      </div>
+    </div>
+  </section>
+
+  <section class="new-events-week">
+    <h2>EVENTS THIS WEEK</h2>
+    <div class="new-events-container" id="new-events-container">
+      <!-- JavaScript will populate this section -->
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

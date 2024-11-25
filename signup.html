@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+        body {
+            background-image: url('public/background.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;  /* Ensures the image covers the entire background */
+            font-family: Arial, sans-serif;
+            color: white;  /* Set text color to white */
+            margin: 0;
+            padding: 0;
+            height: 100vh;  /* Ensure the body covers the full height of the viewport */
+        }
+
+        /* Center the signup form on the page */
+        .signup-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #091838;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.697);  /* Transparent black background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Subtle shadow around form */
+            width: 100%;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.5); 
+            border: none;
+            border-radius: 8px;
+            border-bottom: 2px solid white;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input::placeholder {
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #error-message {
+            margin-top: 15px;
+            color: red;
+            display: none;
+            font-size: 1rem;
+        }
+
+        /* Styling for the "Go back to login page" link */
+        .go-back {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #ffffff;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .go-back:hover {
+            color: #c6c3c3;
+        }
+    </style>
+</head>
+<body>
+    <section class="signup-section">
+        <h1>Sign Up</h1>
+        <form action="/signup" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        
+            <button type="submit">Sign Up</button>
+        </form>
+        
+        <p class="go-back">
+            <a href="/">Go back to login page</a>
+        </p>
+    </section>
+</body>
+</html>

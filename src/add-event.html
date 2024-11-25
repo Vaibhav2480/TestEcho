@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Your Event</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" style="background: #0c172f;">
+    <div class="logo">EchoEvents</div>
+    <ul class="navbar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#login">Login</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#review">Review</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="sign-in">Sign In</button>
+  </header>
+
+  <!-- Add Event Form -->
+  <section class="add-event">
+    <h2>Add Your Event</h2>
+    <form id="event-form">
+      <label for="event-type">Event Type:</label>
+      <select id="event-type" required>
+        <option value="Cultural">Cultural</option>
+        <option value="Music">Music</option>
+        <option value="Dancing">Dancing</option>
+        <option value="Fest">Fest</option>
+        <option value="Departmental">Departmental</option>
+        <option value="Hostel">Hostel</option>
+        <option value="Other">Other</option>
+      </select>
+      <div id="other-type-container" style="display: none;">
+        <label for="other-type">Specify Other:</label>
+        <input type="text" id="other-type">
+      </div>
+
+      <label for="event-name">Event Name:</label>
+      <input type="text" id="event-name" required>
+
+      <label for="event-date">Date:</label>
+      <input type="date" id="event-date" required>
+
+      <label for="event-time">Time:</label>
+      <input type="time" id="event-time" required>
+
+      <label for="event-mode">Mode of Event:</label>
+      <select id="event-mode" required>
+        <option value="Online">Online</option>
+        <option value="Offline">Offline</option>
+      </select>
+
+      <button type="submit">Add Event</button>
+    </form>
+  </section>
+
+  <script>
+    const userType = localStorage.getItem('userType');
+    if (!userType) {
+      alert('Please log in to add an event.');
+      window.location.href = 'login.html';
+    }
+  
+    const eventForm = document.getElementById('event-form');
+  
+    eventForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+  
+      const eventType = document.getElementById('event-type').value === 'Other' 
+        ? document.getElementById('other-type').value 
+        : document.getElementById('event-type').value;
+  
+      const eventName = document.getElementById('event-name').value;
+      const eventDate = document.getElementById('event-date').value;
+      const eventTime = document.getElementById('event-time').value;
+      const eventMode = document.getElementById('event-mode').value;
+  
+      const eventData = { eventType, eventName, eventDate, eventTime, eventMode };
+  
+      let events = JSON.parse(localStorage.getItem('events')) || [];
+      events.push(eventData);
+      localStorage.setItem('events', JSON.stringify(events));
+  
+      alert('Event added successfully!');
+      window.location.href = 'index.html';
+    });
+  </script>
+  
+</body>
+</html>
